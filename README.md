@@ -9,12 +9,18 @@ For live DJ's and performers that need immediate access to Live, this may not be
 ##  How does it work?
 Ableton can communicate over the network via UDP, however these connections are all asynchronous and when you ask Ableton for something on one UDP port, you will eventually get a reply on another UDP port connection.  It's not like a TCP connection where you ask and get a reply in the same session.  This makes it difficult to connect a web browser directly to Ableton.  GoBo handles this async communication for you, by relying websocket calls to/from your Web Clients (Angular 2/Websockets) and sending/listening to/from Ableton.  GoBo truly sits between your browser and Ableton, making everything smooth and as snappy as possible.
 
+Both Ableton and your device will see the currently playing song and a status of playing or stopped.  You can trigger scenes from either Ableton or your mobile device and status will be updated.
+
+### Ableton View
+![alt text](http://epk.sinflood.com/images/dev/gobo-example1.png)
+
+### iPhone View
+![alt text](http://epk.sinflood.com/images/dev/gobo-iphone.png)
+
 ##   How do I set this up?
 You'll need the following:
 
-First, this is designed with a full band in mind, and with backing tracks setup as scenes.  Some bands may have their show setup in the "Arrangement Mode".  This tool has not yet been adapted to handle that.  To use this tool, you'll want to organize your backing tracks in the "Session Mode" with multiple scenes, one scene per song.  See example screenshot.
-
-![alt text](http://epk.sinflood.com/images/dev/gobo-example1.png)
+First, this is designed with a full band in mind, and with backing tracks setup as scenes.  Some bands may have their show setup in the "Arrangement Mode".  This tool has not yet been adapted to handle that.  To use this tool, you'll want to organize your backing tracks in the "Session Mode" with multiple scenes, one scene per song.  See above example screenshot.
 
 ### You'll need
 * A network within your rig so that phones/ipads/clients can connect to GoBo.  Normally you'd have Ableton wired into a wireless router, and the clients (iPad, iPhone, Android) connect on WiFi.
