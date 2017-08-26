@@ -20,8 +20,6 @@ const GoBoUDPListeningPort = ":8080"
 const AbletonListeningPort = 9999
 const AbletonListeningHost = "localhost"
 
-//AngularAppDirectory = "/Users/mdewall/dev/ableton-gobo/angular2-gobo-dist/"
- 
 func SendUDPMessageToAbleton(abletonCommand string, index string) {
 	client := osc.NewClient(AbletonListeningHost, AbletonListeningPort)
 	msg := osc.NewMessage(abletonCommand)
@@ -292,6 +290,7 @@ func main() {
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir(AngularAppDirectory)))
     http.Handle("/", r)
 	fmt.Println("HTTP server listening on port 8100")
+	fmt.Println("Web client connect URL: http://myip:8100")
     http.ListenAndServe(":8100", nil)
 }
 
