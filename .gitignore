@@ -1,0 +1,11 @@
+*DS_Store*
+*.sh
+*.json
+ableton-gobo
+ableton-gobo.exe
+angular2-gobo-dist/
+angular2-gobo/node_modules/
+angular2-gobo/package-lock.json
+
+
+

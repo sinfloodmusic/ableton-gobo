@@ -1,0 +1,38 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--Mask-->
+<div class="view">
+    <!--Intro content-->
+    <div class="full-bg-img flex-center">
+        <section>
+            <div class="container">
+
+                <div class="row" style="padding-top: 15px;">
+                    <div class="col-md-12">
+                        <div style="text-align:center" [ngClass]="playing == true ? 'alert alert-success' : 'alert alert-danger'">
+                            {{current_song}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <button type="button" class="btn btn-danger" (click)="stopPlaying()">Stop</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-deck" style="padding-top: 15px;">
+                    <div class="card" style="text-align:center" *ngFor="let song of song_list">
+                        <div class="card-block">
+                            <p class="card-text">{{song.title}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" (click)="triggerScene(song)">Play</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     </div>
+</div>
