@@ -15,7 +15,9 @@ Both Ableton and your device will see the currently playing song and a status of
 ![alt text](http://epk.sinflood.com/images/dev/gobo-example1.png)
 
 ### iPhone View
-![alt text](http://epk.sinflood.com/images/dev/gobo-iphone.png)
+<div style="text-align:center">
+    <img src="http://epk.sinflood.com/images/dev/gobo-iphone.png" alt="iPhone View" width="400">
+</div>
 
 ##   How do I set this up?
 You'll need the following:
