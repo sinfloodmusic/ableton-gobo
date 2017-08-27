@@ -4,7 +4,7 @@ GoBo is a "go-between" for managing playback and full scene triggering within Ab
 GoBo allows anyone with an iPad, iPhone, or web client to trigger songs and see the basic status of playback.  Sinflood uses this to drive the band's live show while keeping the main rig off-stage or in a back corner of the stage, freeing up more space to perform.
 
 ##   Why?
-For live DJ's and performers that need immediate access to Live, this may not be a good fit for you.  This tool is designed for a live band that needs to trigger backing tracks but wants to save valueable stage space by keeping a the gear off stage our out of the way.  Before this tool, we (Sinflood) were forced to keep the laptop and rack close to the drummer or keyboardist.  With our rig being quite sizeable, this led to cramped stage layouts in smaller venues.  
+For live DJ's and performers that need immediate access to Live, this may not be a good fit for you.  This tool is designed for a live band that needs to trigger backing tracks but wants to save valuable stage space by keeping a the gear off stage our out of the way.  Before this tool, we (Sinflood) were forced to keep the laptop and rack close to the drummer or keyboardist.  With our rig being quite sizeable, this led to cramped stage layouts in smaller venues.  
 
 ##  How does it work?
 Ableton can communicate over the network via UDP, however these connections are all asynchronous and when you ask Ableton for something on one UDP port, you will eventually get a reply on another UDP port connection.  It's not like a TCP connection where you ask and get a reply in the same session.  This makes it difficult to connect a web browser directly to Ableton.  GoBo handles this async communication for you, by relaying websocket calls to/from your Web Clients (Angular 2/Websockets) and sending/listening to/from Ableton.  GoBo truly sits between your browser and Ableton, making everything smooth and as snappy as possible.
@@ -53,7 +53,7 @@ https://www.thepolyglotdeveloper.com/2016/12/create-real-time-chat-app-golang-an
 
 Almost all of the Angular App code is lifted from Nic.  Almost all of the golang client manager code as well.
 
-At the moment, my original contirubtion is in the Max 4 Live plugin, the accompanying Javascript for said plugin, as well as the UDP server component of the GoLang server that listens to and relays messages from, Ableton.
+At the moment, my original contribution is in the Max 4 Live plugin, the accompanying Javascript for said plugin, as well as the UDP server component of the GoLang server that listens to and relays messages from, Ableton.
 
 ### Get up and Running
 
@@ -94,7 +94,7 @@ When GoBo launches, it will provide the URL where your clients (iPhone, iPad) ca
 Replace `<your-ip-address>` with the ip address of the server running GoBo.  Your web client will then hit GoBo's static folder and launch the Angular 2 Single Page App (SPA).
 
 ### Future
-* Interface update.  As I get some time (or if anyone would like to contribute) I'd like to come up with a slghtly nicer interface, especially one that's geared toward playing on a dark stage (Black background with yellow or red fonts)
+* Interface update.  As I get some time (or if anyone would like to contribute) I'd like to come up with a nicer interface, especially one that's geared toward playing on a dark stage (Black background with yellow or red fonts).  Sadly, I'm not a front-end web developer, so this is pretty minimal at the moment.
 * WebSocket "bot".  Although you can have your band control the show, you may want to automate the show unless there is some interruption.  I'm thinking through a bot that connects to GoBo and knows the playlist and timing and can start the scenes so you don't have any dead space, possibly firing a sound effect clip that brings you nicely into the next song, etc.  If anyone hit the "stop" button (say there's a technical issue or you need to address the audience) the bot would disengage until it was told to resume control of the show.
 
 #### Todo
