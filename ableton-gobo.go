@@ -290,7 +290,7 @@ func main() {
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir(AngularAppDirectory)))
     http.Handle("/", r)
 	fmt.Println("HTTP server listening on port 8100")
-	fmt.Println("Web client connect URL: http://myip:8100")
+	fmt.Println("Web client connect URL: http://<your-ip-address>:8100")
     http.ListenAndServe(":8100", nil)
 }
 

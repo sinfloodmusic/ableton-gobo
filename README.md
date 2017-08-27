@@ -71,11 +71,11 @@ You'll need to download Go from google to compile the GoBo golang portion.  It's
 * [Download Go](https://golang.org/dl/)
 * In the root of the project, `go build`
 * That will output an executable called ableton-gobo (Mac) or ableton-gobo.exe (Windows)
-* Launch GoBo with the path to your angular app.  We'll create this folder in the Angular Section
-* You can pass the optional `debug` flag to see output going back and forth to your clients and Ableton.
+* Launch GoBo with the path to the angular app.  You can use the included angular2-gobo-dist folder or you can modify the look and feel yourself (See the section: Updating the Angular App)
+* You can pass the optional `debug` flag to all the messages coming and going from your clients and Ableton.
 * `ableton-gobo -webapp "/Users/me/Downloads/ableton-gobo/angular2-gobo-dist/" -debug`
 
-#### Angular Static App
+#### Updating the Angular App (Optional)
 
 You do not need to do this if you are ok with the default "angular2-gobo-dist" "UI" that is provided.  You can simply have GoBo use that and avoid any of the nodejs/npm/angular hassle.
 
@@ -85,14 +85,21 @@ In Angular 2, you "build" your web app and can deploy a condensed version to a f
 * Note that you don't need to do this on your Ableton machine if you aren't comfortable.  You can build the Angular app on any machine and then just copy the contents to the machine where GoBo is residing.
 * Download and install `nodejs` [here](https://nodejs.org/en/download/)
 * Open a fresh shell and install the Angular 2 cli
-...`npm install -g @angular/cli`
+* * `npm install -g @angular/cli`
 * cd into the angular2-gobo folder
 * build to a distribution folder.  This is the folder GoBo will need to have access to.
-...`ng build --env=prod --output-path=/Users/me/Downloads/ableton-gobo/angular2-gobo-dist/`
+* * `ng build --env=prod --output-path=/Users/me/Downloads/ableton-gobo/angular2-gobo-dist/`
 
 #### Launch the web app
 When GoBo lanuches, it will provide the URL where your clients (iPhone, iPad) can connect
 
-`Web client connect URL: http://myip:8100`
+`Web client connect URL: http://<your-ip-address>:8100`
 
-Replace 'ip' with the ip address of your machine.
+Replace `<your-ip-address>` with the ip address of the server running GoBo.  Your web client will then hit GoBo's static folder and launch the Angular 2 Single Page App (SPA).
+
+### Future
+* Interface update.  As I get some time (or if anyone would like to contribute) I'd like to come up with a slghtly nicer interface, especially one that's geared toward playing on a dark stage (Black background with yellow or red fonts)
+* WebSocket "bot".  Although you can have your band control the show, you may want to automate the show unless there is some interruption.  I'm thinking through a bot that connects to GoBo and knows the playlist and timing and can start the scenes so you don't have any dead space, possibly firing a sound effect clip that brings you nicely into the next song, etc.  If anyone hit the "stop" button (say there's a technical issue or you need to address the audience) the bot would disengage until it was told to resume control of the show.
+
+#### Todo
+* Status on song position to allow a bot to take control
