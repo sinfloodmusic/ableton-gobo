@@ -16,6 +16,7 @@ import (
 
 var DebugMode bool
 
+const GoBoHTTPListeningPort = "8100"
 const GoBoUDPListeningPort = ":8080"
 const AbletonListeningPort = 9999
 const AbletonListeningHost = "localhost"
@@ -289,9 +290,9 @@ func main() {
 	logger("AngularAppDirectory is " + AngularAppDirectory)
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir(AngularAppDirectory)))
     http.Handle("/", r)
-	fmt.Println("HTTP server listening on port 8100")
-	fmt.Println("Web client connect URL: http://<your-ip-address>:8100")
-    http.ListenAndServe(":8100", nil)
+	fmt.Println("HTTP server listening on port " + GoBoHTTPListeningPort)
+	fmt.Println("Web client connect URL: http://<your-ip-address>:" + GoBoHTTPListeningPort)
+    http.ListenAndServe(":" + GoBoHTTPListeningPort, nil)
 }
 
 func UdpListeningServer(port string) {
