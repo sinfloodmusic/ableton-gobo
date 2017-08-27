@@ -19,13 +19,9 @@ Both Ableton and your device will see the currently playing song and a status of
     <img src="http://epk.sinflood.com/images/dev/gobo-iphone.png" alt="iPhone View" width="400">
 </div>
 
-##   How do I set this up?
-You'll need the following:
-
-First, this is designed with a full band in mind, and with backing tracks setup as scenes.  Some bands may have their show setup in the "Arrangement Mode".  This tool has not yet been adapted to handle that.  To use this tool, you'll want to organize your backing tracks in the "Session Mode" with multiple scenes, one scene per song.  See above example screenshot.
-
-### You'll need
-* A network within your rig so that phones/ipads/clients can connect to GoBo.  In our case, we have the Ableton system wired into a wireless router and the clients (iPad, iPhone, Android) connect on WiFi.  A router like TP-LINK TL-WR810N is small and stays out of your way.
+### Pre-requisites
+* Your songs organized by scenes.  Some bands may have their show setup in the "Arrangement Mode".  This tool has not yet been adapted to handle that, but it could be in the future.  To use this tool, you'll need to organize your backing tracks in the "Session Mode" with multiple scenes, one scene per song.  See above example screenshot.
+* A network within your rig so that phones/ipads/clients can connect to GoBo.  In our case, we have the Ableton system wired into a wireless router and the clients (iPad, iPhone, Android) connect on WiFi.  A router like the [TP-LINK TL-WR810N](https://www.amazon.com/TP-LINK-TL-WR810N-Wireless-Adapter-Repeater/dp/B01CVOLGOG) is small and stays out of your way.  Ideally you run dnsmasq and can have a nice hostname alias for your GoBo server (so your clients can just open up the "MyBand.local" page and start running the show), but sadly the firmware doesn't support it and I haven't found a good way to reflas the device with a 3rd party firmware.  This means to do that I'm running MaraDNS on our show computer (Windows).
 * A computer to run GoBo on.  Normally, this is the Ableton machine itself, but it doesn't have to be.  You can put it on a Raspberry Pi or another machine that is on the same network as your Ableton host as long as it can compile golang.
 * A mobile device on or off stage to drive the show.
 
@@ -52,8 +48,8 @@ The defaults of GoBo are:
 The UI is nothing special at the moment.  If there are any skilled front-end web developers, would love to hear from you.
 
 ###  Credit
-Nic Raboy did a great tutorial on Golang, Web Sockets, and an Angular App here:
-https://www.thepolyglotdeveloper.com/2016/12/create-real-time-chat-app-golang-angular-2-websockets/
+Nic Raboy did a great tutorial on Golang, Web Sockets, and an Angular App [here](
+https://www.thepolyglotdeveloper.com/2016/12/create-real-time-chat-app-golang-angular-2-websockets/).
 
 Almost all of the Angular App code is lifted from Nic.  Almost all of the golang client manager code as well.
 
@@ -91,7 +87,7 @@ In Angular 2, you "build" your web app and can deploy a condensed version to a f
 * * `ng build --env=prod --output-path=/Users/me/Downloads/ableton-gobo/angular2-gobo-dist/`
 
 #### Launch the web app
-When GoBo lanuches, it will provide the URL where your clients (iPhone, iPad) can connect
+When GoBo launches, it will provide the URL where your clients (iPhone, iPad) can connect
 
 `Web client connect URL: http://<your-ip-address>:8100`
 
