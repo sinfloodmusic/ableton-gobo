@@ -29,7 +29,8 @@ export class SocketService {
 
         if (data == "1"){
             this.socket.send('{"payload":"trigger_scene"}');
-            this.socket.send('{"payload":"get_status"}');
+
+            //this.socket.send('{"payload":"get_status"}');
         }
         else {
             this.socket.send(data);
